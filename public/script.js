@@ -1,26 +1,28 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    // --- KODE BARU: Fungsionalitas Menu Hamburger ---
+    // --- KODE BARU: Fungsionalitas Menu Sidebar ---
     const menuToggle = document.getElementById('menu-toggle');
     const closeMenu = document.getElementById('close-menu');
-    const overlayMenu = document.getElementById('overlay-menu');
-    const navLinks = overlayMenu.querySelectorAll('.nav-link');
+    const sidebar = document.getElementById('sidebar-nav');
+    const backdrop = document.getElementById('backdrop');
+    const navLinks = sidebar.querySelectorAll('.nav-link');
 
-    // Buka menu
-    menuToggle.addEventListener('click', () => {
-        overlayMenu.classList.add('open');
-    });
+    const openSidebar = () => {
+        sidebar.classList.add('open');
+        backdrop.classList.add('open');
+    };
 
-    // Tutup menu
-    closeMenu.addEventListener('click', () => {
-        overlayMenu.classList.remove('open');
-    });
+    const closeSidebar = () => {
+        sidebar.classList.remove('open');
+        backdrop.classList.remove('open');
+    };
 
-    // Tutup menu setelah link diklik (untuk navigasi di halaman yang sama)
+    menuToggle.addEventListener('click', openSidebar);
+    closeMenu.addEventListener('click', closeSidebar);
+    backdrop.addEventListener('click', closeSidebar);
+
     navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            overlayMenu.classList.remove('open');
-        });
+        link.addEventListener('click', closeSidebar);
     });
 
 

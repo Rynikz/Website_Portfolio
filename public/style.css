@@ -507,60 +507,6 @@ footer {
     object-fit: cover; /* Membuat gambar mengisi kartu tanpa merusak rasio */
 }
 
-/* KODE BARU: UNTUK DAFTAR SERTIFIKASI DENGAN HOVER */
-
-.cert-list {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.cert-item {
-    position: relative; /* Penting untuk positioning preview */
-    padding: 1.5rem 2rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    transition: background-color 0.3s ease;
-}
-
-.cert-item:hover {
-    background-color: rgba(30, 41, 59, 0.7);
-}
-
-.cert-item h3 {
-    margin: 0;
-    color: var(--heading-color);
-    font-weight: 500;
-}
-
-.cert-preview {
-    position: absolute;
-    top: 50%;
-    left: 105%; /* Muncul di sebelah kanan */
-    transform: translateY(-50%);
-    width: 300px;
-    height: 210px;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    
-    /* Sembunyikan secara default */
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transition: opacity 0.4s ease, transform 0.4s ease;
-}
-
-.cert-item:hover .cert-preview {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(-50%) translateX(10px); /* Efek slide kecil saat muncul */
-}
-
-.cert-preview iframe {
-    width: 100%;
-    height: 100%;
-}
-
 .project-image-slider {
     position: relative;
     overflow: hidden;

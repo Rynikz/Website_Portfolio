@@ -62,6 +62,41 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, { threshold: 0.1 });
 
+    
+
     const elementsToFadeIn = document.querySelectorAll('.fade-in');
     elementsToFadeIn.forEach(el => observer.observe(el));
+
+    const sliders = document.querySelectorAll('.project-image-slider');
+    sliders.forEach(slider => {
+        const container = slider.querySelector('.carousel-container');
+        const prevBtn = slider.querySelector('.prev');
+        const nextBtn = slider.querySelector('.next');
+
+        nextBtn.addEventListener('click', () => {
+            const scrollAmount = container.clientWidth;
+            container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        });
+
+        prevBtn.addEventListener('click', () => {
+            const scrollAmount = -container.clientWidth;
+            container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        });
+    });
+
+    // --- KODE BARU: LOGIKA UNTUK TOMBOL "SHOW MORE" SERTIFIKAT ---
+    const toggleBtn = document.getElementById('toggle-certs-btn');
+    const certGrid = document.getElementById('cert-grid');
+
+    if (toggleBtn && certGrid) {
+        toggleBtn.addEventListener('click', () => {
+            certGrid.classList.toggle('is-expanded');
+            
+            if (certGrid.classList.contains('is-expanded')) {
+                toggleBtn.textContent = 'Show Less';
+            } else {
+                toggleBtn.textContent = 'Show More';
+            }
+        });
+    }
 });

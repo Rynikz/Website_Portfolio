@@ -446,6 +446,128 @@ footer {
     color: var(--text-color);
 }
 
+.project-card {
+    background-color: transparent; /* Hapus background dari kartu utama */
+    height: 280px; /* Tentukan tinggi tetap untuk kartu flip */
+    perspective: 1000px; /* Efek 3D */
+    border: none;
+    backdrop-filter: none;
+}
+
+.project-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.project-card:hover .project-card-inner {
+    transform: rotateY(180deg);
+}
+
+.project-card-front, .project-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+    border-radius: 12px;
+    box-sizing: border-box;
+}
+
+.project-card-front {
+    background-color: var(--card-color);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--heading-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.project-card-front h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+.project-card-back {
+    background-color: var(--card-color);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    transform: rotateY(180deg);
+    overflow: hidden; /* Pastikan konten tidak keluar dari kartu */
+}
+
+.project-card-back img, .project-card-back iframe {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Membuat gambar mengisi kartu tanpa merusak rasio */
+}
+
+/* KODE BARU: UNTUK DAFTAR SERTIFIKASI DENGAN HOVER */
+
+.cert-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cert-item {
+    position: relative; /* Penting untuk positioning preview */
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.cert-item:hover {
+    background-color: rgba(30, 41, 59, 0.7);
+}
+
+.cert-item h3 {
+    margin: 0;
+    color: var(--heading-color);
+    font-weight: 500;
+}
+
+.cert-preview {
+    position: absolute;
+    top: 50%;
+    left: 105%; /* Muncul di sebelah kanan */
+    transform: translateY(-50%);
+    width: 300px;
+    height: 210px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    
+    /* Sembunyikan secara default */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.cert-item:hover .cert-preview {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-50%) translateX(10px); /* Efek slide kecil saat muncul */
+}
+
+.cert-preview iframe {
+    width: 100%;
+    height: 100%;
+}
+
+/* Penyesuaian untuk layar kecil agar preview tidak keluar layar */
+@media (max-width: 900px) {
+    .cert-preview {
+        display: none; /* Sembunyikan preview di mobile untuk pengalaman yang lebih baik */
+    }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     #hero h1 {

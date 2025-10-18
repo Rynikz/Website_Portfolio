@@ -10,33 +10,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
 </head>
 <body>
-    <div class="aurora-blob"></div>
-    <div class="aurora-blob"></div>
-
-    <header>
-        <nav>
-            <a href="#hero" class="logo">[WAA]</a>
-            <button class="hamburger" id="menu-toggle" aria-label="Open navigation menu">
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-            </button>
-        </nav>
-    </header>
-
+    <div class="aurora-blob"></div><div class="aurora-blob"></div>
+    <header><nav><button class="hamburger" id="menu-toggle" aria-label="Open navigation menu"><span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span></button></nav></header>
     <div class="backdrop" id="backdrop"></div>
-    <aside class="sidebar-nav" id="sidebar-nav">
-        <button class="close-btn" id="close-menu" aria-label="Close navigation menu">&times;</button>
-        <ul>
-            <li><a href="#about" class="nav-link">About Me</a></li>
-            <li><a href="#education" class="nav-link">Education</a></li>
-            <li><a href="#experience" class="nav-link">Experience</a></li>
-            <li><a href="#projects" class="nav-link">Projects</a></li>
-            <li><a href="#awards" class="nav-link">Awards</a></li>
-            <li><a href="#certifications" class="nav-link">Certifications</a></li>
-            <li><a href="#contact" class="nav-link">Contact</a></li>
-        </ul>
-    </aside>
+    <aside class="sidebar-nav" id="sidebar-nav"><button class="close-btn" id="close-menu" aria-label="Close navigation menu">&times;</button><ul><li><a href="#about" class="nav-link">About Me</a></li><li><a href="#experience" class="nav-link">Experience</a></li><li><a href="#projects" class="nav-link">Projects</a></li><li><a href="#awards" class="nav-link">Awards</a></li><li><a href="#certifications" class="nav-link">Certifications</a></li><li><a href="#contact" class="nav-link">Contact</a></li></ul></aside>
 
     <main>
         <section id="hero">
@@ -60,7 +37,7 @@
                         <img src="images/profile/profile.jpg" alt="Photo of Wahyu Adji Agus Saputra">
                     </div>
                     <div class="about-text">
-                        <h3>Dedicated Hardware Programmer & AI Enthusiast</h3>
+                        <h3>Hardware Programmer & AI Enthusiast</h3>
                         <p>I am a dedicated student in the Mechatronics Engineering Education program at Yogyakarta State University with hands-on experience as a Hardware Programmer for a competitive robotics team. Beyond my core curriculum, I am passionate about furthering my expertise in machine learning through specialized bootcamps and self-directed study, aiming to build robust, intelligent systems from the ground up.</p>
                         <a href="images/cv/CV-Wahyu-Adji-Saputra.pdf" download="CV-Wahyu-Adji-Saputra.pdf" class="cv-button">
                             Download CV <i class="fas fa-download"></i>
@@ -118,22 +95,33 @@
         </section>
 
         <section id="projects">
-            <h2 class="section-title fade-in">Featured Projects</h2>
+            <h2 class="section-title fade-in">Projects</h2>
             <div class="project-grid fade-in">
+
                 <div class="project-card">
-                    <div class="project-image"><img src="images/exp/shroomery.jpg" alt="Shroomery Monitoring"></div>
-                    <div class="project-info">
-                        <h3>Shroomery Monitoring</h3>
-                        <p>Developed an IoT-based application for real-time monitoring and automated control of key environmental parameters for mushroom cultivation, including humidity, temperature, and light.</p>
+                    <div class="project-card-inner">
+                        <div class="project-card-front">
+                            <h3>IoT Project: Shroomery</h3>
+                            <p>Engineered a real-time mushroom monitoring system with automated environmental controls to optimize growth conditions.</p>
+                        </div>
+                        <div class="project-card-back">
+                            <img src="images/exp/shroomery.jpg" alt="Shroomery Monitoring">
+                        </div>
                     </div>
                 </div>
+
                 <div class="project-card">
-                    <div class="project-image"><img src="images/exp/signbridge.jpg" alt="SignBridge"></div>
-                    <div class="project-info">
-                        <h3>SignBridge</h3>
-                        <p>Built a real-time recognition system for Indonesian sign language (SIBI & BISINDO) that translates hand gestures into text and includes speech-to-text integration for two-way communication.</p>
+                    <div class="project-card-inner">
+                        <div class="project-card-front">
+                            <h3>AI Project: SignBridge</h3>
+                            <p>Developed an innovative two-way sign language translator that detects SIBI/BISINDO gestures and converts them to real-time text and audio.</p>
+                        </div>
+                        <div class="project-card-back">
+                            <img src="images/exp/signbridge.jpg" alt="SignBridge">
+                        </div>
                     </div>
                 </div>
+
             </div>
         </section>
 
@@ -141,63 +129,82 @@
             <h2 class="section-title fade-in">Honors & Awards</h2>
             <div class="project-grid fade-in">
                 <div class="project-card">
-                    <div class="project-image"><iframe src="images/awards/nasional_UMS.pdf" height="250" style="border:none;" title="Sertifikat KRI Nasional 2024"></iframe></div>
-                    <div class="project-info"><h3>2nd Place Winner, National</h3><p>Indonesian Robot Contest (KRI) 2024, Wheeled Soccer Robot Division.</p></div>
+                    <div class="project-card-inner">
+                        <div class="project-card-front"><h3>2nd Place Winner, National</h3><p>Indonesian Robot Contest (KRI) 2024</p></div>
+                        <div class="project-card-back"><iframe src="images/awards/nasional_UMS.pdf" style="border:none;" title="Sertifikat KRI Nasional 2024"></iframe></div>
+                    </div>
                 </div>
                 <div class="project-card">
-                    <div class="project-image"><iframe src="images/awards/wilayah_UMS.pdf" height="250" style="border:none;" title="Sertifikat KRI Wilayah 2024"></iframe></div>
-                    <div class="project-info"><h3>2nd Place Winner, Regional</h3><p>Indonesian Robot Contest (KRI) 2024, Wheeled Soccer Robot Division.</p></div>
+                    <div class="project-card-inner">
+                        <div class="project-card-front"><h3>2nd Place Winner, Regional</h3><p>Indonesian Robot Contest (KRI) 2024</p></div>
+                        <div class="project-card-back"><iframe src="images/awards/wilayah_UMS.pdf" style="border:none;" title="Sertifikat KRI Wilayah 2024"></iframe></div>
+                    </div>
                 </div>
                 <div class="project-card">
-                    <div class="project-image"><iframe src="images/awards/nasional_USM.pdf" height="250" style="border:none;" title="Sertifikat KRI Nasional 2023"></iframe></div>
-                    <div class="project-info"><h3>2nd Place Winner, National</h3><p>Indonesian Robot Contest (KRI) 2023, Wheeled Soccer Robot Division.</p></div>
+                    <div class="project-card-inner">
+                        <div class="project-card-front"><h3>2nd Place Winner, National</h3><p>Indonesian Robot Contest (KRI) 2023</p></div>
+                        <div class="project-card-back"><iframe src="images/awards/nasional_USM.pdf" style="border:none;" title="Sertifikat KRI Nasional 2023"></iframe></div>
+                    </div>
                 </div>
                 <div class="project-card">
-                    <div class="project-image"><iframe src="images/awards/wilayah_USM.pdf" height="250" style="border:none;" title="Sertifikat KRI Wilayah 2023"></iframe></div>
-                    <div class="project-info"><h3>1st Place Winner, Regional</h3><p>Indonesian Robot Contest (KRI) 2023, Wheeled Soccer Robot Division.</p></div>
+                    <div class="project-card-inner">
+                        <div class="project-card-front"><h3>1st Place Winner, Regional</h3><p>Indonesian Robot Contest (KRI) 2023</p></div>
+                        <div class="project-card-back"><iframe src="images/awards/wilayah_USM.pdf" style="border:none;" title="Sertifikat KRI Wilayah 2023"></iframe></div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="skills">
-             <h2 class="section-title fade-in">Skills & Technologies</h2>
-             <div class="skills-logo-grid fade-in">
-                <div class="skill-item"><i class="devicon-cplusplus-plain"></i><span>C++</span></div>
-                <div class="skill-item"><i class="devicon-c-plain"></i><span>C</span></div>
-                <div class="skill-item"><i class="devicon-python-plain"></i><span>Python</span></div>
-                <div class="skill-item"><i class="devicon-csharp-plain"></i><span>C#</span></div>
-                <div class="skill-item"><i class="devicon-javascript-plain"></i><span>JavaScript</span></div>
-                <div class="skill-item"><i class="devicon-nodejs-plain"></i><span>Node.js</span></div>
-                <div class="skill-item"><i class="devicon-git-plain"></i><span>Git</span></div>
-                <div class="skill-item"><i class="devicon-github-original"></i><span>GitHub</span></div>
-                <div class="skill-item"><i class="devicon-docker-plain"></i><span>Docker</span></div>
-                <div class="skill-item"><i class="fas fa-brain"></i><span>AI/ML</span></div>
-                <div class="skill-item"><i class="fas fa-robot"></i><span>Robotics</span></div>
-                <div class="skill-item"><i class="fas fa-wifi"></i><span>IoT</span></div>
-             </div>
-        </section>
+        <section id="skills"></section>
 
         <section id="certifications">
             <h2 class="section-title fade-in">Certifications</h2>
-            <div class="project-grid fade-in">
-                  <div class="project-card"><div class="project-info"><h3>Programming Basics for Software Development</h3><p><iframe src="images/certs/Memulai Pemrograman Software.pdf" height="250" style="border:none;" title="Sertifikat Memulai Pemrograman Software"></iframe></p></div></div>
-                  <div class="project-card"><div class="project-info"><h3>Git and GitHub Fundamentals</h3><p><iframe src="images/certs/Dasar Git.pdf" height="250" style="border:none;" title="Sertifikat Dasar Git"></iframe></p></div></div>
-                  <div class="project-card"><div class="project-info"><h3>Programming Logic 101</h3><p><iframe src="images/certs/101.pdf" height="250" style="border:none;" title="Sertifikat Programming Logic"></iframe></p></div></div>
-                  <div class="project-card"><div class="project-info"><h3>Python Programming</h3><p><iframe src="images/certs/Pemrograman Python.pdf" height="250" style="border:none;" title="Sertifikat Pemrograman Python"></iframe></p></div></div>
-                  <div class="project-card"><div class="project-info"><h3>Basic AI</h3><p><iframe src="images/certs/Dasar AI.pdf" height="250" style="border:none;" title="Sertifikat Dasar AI"></iframe></p></div></div>
-                  <div class="project-card"><div class="project-info"><h3>Data Visualization</h3><p><iframe src="images/certs/Dasar Visualisasi Data.pdf" height="250" style="border:none;" title="Sertifikat Dasar Visualisasi Data"></iframe></p></div></div>
-                  <div class="project-card"><div class="project-info"><h3>Machine Learning for Beginners</h3><p><iframe src="images/certs/ML Pemula.pdf" height="250" style="border:none;" title="Sertifikat ML Pemula"></iframe></p></div></div>
-                  <div class="project-card"><div class="project-info"><h3>Deep Learning Fundamentals</h3><p><iframe src="images/certs/DeepLearning.pdf" height="250" style="border:none;" title="Sertifikat DeepLearning"></iframe></p></div></div>
-                  <div class="project-card"><div class="project-info"><h3>Applied Machine Learning</h3><p><iframe src="images/certs/ML Terapan.pdf" height="250" style="border:none;" title="Sertifikat ML Terapan"></iframe></p></div></div>
-                  <div class="project-card"><div class="project-info"><h3>Data Science Learning Path</h3><p><iframe src="images/certs/Data Science.pdf" height="250" style="border:none;" title="Sertifikat Data Science"></iframe></p></div></div>
+            <div class="cert-list fade-in">
+
+                <div class="cert-item">
+                    <h3>Programming Basics for Software Development</h3>
+                    <div class="cert-preview"><iframe src="images/certs/Memulai Pemrograman Software.pdf" style="border:none;" title="Sertifikat Memulai Pemrograman Software"></iframe></div>
+                </div>
+                <div class="cert-item">
+                    <h3>Git and GitHub Fundamentals</h3>
+                    <div class="cert-preview"><iframe src="images/certs/Dasar Git.pdf" style="border:none;" title="Sertifikat Dasar Git"></iframe></div>
+                </div>
+                <div class="cert-item">
+                    <h3>Programming Logic 101</h3>
+                    <div class="cert-preview"><iframe src="images/certs/101.pdf" style="border:none;" title="Sertifikat Programming Logic"></iframe></div>
+                </div>
+                <div class="cert-item">
+                    <h3>Python Programming</h3>
+                    <div class="cert-preview"><iframe src="images/certs/Pemrograman Python.pdf" style="border:none;" title="Sertifikat Pemrograman Python"></iframe></div>
+                </div>
+                <div class="cert-item">
+                    <h3>Basic AI</h3>
+                    <div class="cert-preview"><iframe src="images/certs/Dasar AI.pdf" style="border:none;" title="Sertifikat Dasar AI"></iframe></div>
+                </div>
+                <div class="cert-item">
+                    <h3>Data Visualization</h3>
+                    <div class="cert-preview"><iframe src="images/certs/Dasar Visualisasi Data.pdf" style="border:none;" title="Sertifikat Dasar Visualisasi Data"></iframe></div>
+                </div>
+                <div class="cert-item">
+                    <h3>Machine Learning for Beginners</h3>
+                    <div class="cert-preview"><iframe src="images/certs/ML Pemula.pdf" style="border:none;" title="Sertifikat ML Pemula"></iframe></div>
+                </div>
+                <div class="cert-item">
+                    <h3>Deep Learning Fundamentals</h3>
+                    <div class="cert-preview"><iframe src="images/certs/DeepLearning.pdf" style="border:none;" title="Sertifikat DeepLearning"></iframe></div>
+                </div>
+                <div class="cert-item">
+                    <h3>Applied Machine Learning</h3>
+                    <div class="cert-preview"><iframe src="images/certs/ML Terapan.pdf" style="border:none;" title="Sertifikat ML Terapan"></iframe></div>
+                </div>
+                <div class="cert-item">
+                    <h3>Data Science Learning Path</h3>
+                    <div class="cert-preview"><iframe src="images/certs/Data Science.pdf" style="border:none;" title="Sertifikat Data Science"></iframe></div>
+                </div>
             </div>
         </section>
 
-        <section id="contact" class="fade-in">
-            <h2 class="section-title">Contact Me</h2>
-            <p>Interested in collaborating or just want to say hi? <br> Send me an email or connect with me on social media.</p>
-            <a href="mailto:ranggaldrian143@gmail.com" class="cta-button">Send Email</a>
-        </section>
+        <section id="contact" class="fade-in"></section>
     </main>
 
     <footer>

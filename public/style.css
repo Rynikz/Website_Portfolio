@@ -468,7 +468,7 @@ footer {
 }
 
 /* KODE BARU: GAYA UNTUK "SHOW MORE" SERTIFIKAT */
-.cert-card:nth-child(n+5) {
+.cert-card:nth-child(n+3) {
     display: none; /* Sembunyikan kartu ke-5 dan seterusnya secara default */
 }
 
@@ -479,6 +479,26 @@ footer {
 .show-more-container {
     text-align: center;
     margin-top: 2rem;
+}
+
+/* GAYA BARU UNTUK KARTU SERTIFIKAT */
+.cert-card .project-info {
+    padding: 1.2rem 1.5rem;
+    text-align: center;
+}
+
+.cert-card .project-info h3 {
+    font-size: 1rem; /* Sedikit perkecil font judul sertifikat */
+}
+
+.cert-card .cert-image {
+    height: 250px; /* Tinggi tetap untuk container iframe */
+    overflow: hidden;
+}
+
+.cert-card .cert-image iframe {
+    width: 100%;
+    height: 100%;
 }
 
 /* Penyesuaian untuk layar kecil agar preview tidak keluar layar */

@@ -1,6 +1,30 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    // --- Efek Animasi Ketik ---
+    // --- KODE BARU: Fungsionalitas Menu Hamburger ---
+    const menuToggle = document.getElementById('menu-toggle');
+    const closeMenu = document.getElementById('close-menu');
+    const overlayMenu = document.getElementById('overlay-menu');
+    const navLinks = overlayMenu.querySelectorAll('.nav-link');
+
+    // Buka menu
+    menuToggle.addEventListener('click', () => {
+        overlayMenu.classList.add('open');
+    });
+
+    // Tutup menu
+    closeMenu.addEventListener('click', () => {
+        overlayMenu.classList.remove('open');
+    });
+
+    // Tutup menu setelah link diklik (untuk navigasi di halaman yang sama)
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            overlayMenu.classList.remove('open');
+        });
+    });
+
+
+    // --- Efek Animasi Ketik (Sama seperti sebelumnya) ---
     const typingTextElement = document.getElementById('typing-text');
     const wordsToType = ["Mechatronics Engineer", "AI/ML Developer", "Robotics Programmer"];
     let wordIndex = 0;
@@ -8,76 +32,34 @@ document.addEventListener('DOMContentLoaded', function() {
     let isDeleting = false;
 
     function type() {
+        if (!typingTextElement) return;
         const currentWord = wordsToType[wordIndex];
-        
         if (isDeleting) {
-            // Hapus karakter
             typingTextElement.textContent = currentWord.substring(0, charIndex - 1);
             charIndex--;
         } else {
-            // Tambah karakter
             typingTextElement.textContent = currentWord.substring(0, charIndex + 1);
             charIndex++;
         }
-
-        // Cek kondisi
         if (!isDeleting && charIndex === currentWord.length) {
-            // Selesai mengetik, tunggu, lalu mulai hapus
-            isDeleting = true;
-            setTimeout(type, 2000); // Waktu jeda sebelum menghapus
+            isDeleting = true; setTimeout(type, 2000);
         } else if (isDeleting && charIndex === 0) {
-            // Selesai menghapus, ganti kata, mulai ketik lagi
-            isDeleting = false;
-            wordIndex = (wordIndex + 1) % wordsToType.length;
-            setTimeout(type, 500); // Waktu jeda sebelum kata baru
+            isDeleting = false; wordIndex = (wordIndex + 1) % wordsToType.length; setTimeout(type, 500);
         } else {
-            // Lanjutkan mengetik/menghapus
-            const typingSpeed = isDeleting ? 75 : 150;
-            setTimeout(type, typingSpeed);
+            const typingSpeed = isDeleting ? 75 : 150; setTimeout(type, typingSpeed);
         }
     }
-    
-    if (typingTextElement) {
-        type();
-    }
+    type();
 
-    // --- Navigasi Aktif saat Scroll ---
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.nav-link');
-
-    window.addEventListener('scroll', () => {
-        let currentSectionId = '';
-
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            // Cek apakah section ada di dalam viewport
-            if (pageYOffset >= sectionTop - sectionHeight / 3) {
-                currentSectionId = section.getAttribute('id');
-            }
-        });
-
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            // href di link (misal: "#about") sama dengan id section saat ini
-            if (link.getAttribute('href').substring(1) === currentSectionId) {
-                link.classList.add('active');
-            }
-        });
-    });
-
-    // --- Animasi Fade-in saat Scroll ---
+    // --- Animasi Fade-in saat Scroll (Sama seperti sebelumnya) ---
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('is-visible');
             }
         });
-    }, {
-        threshold: 0.1 // Memicu animasi saat 10% elemen terlihat
-    });
+    }, { threshold: 0.1 });
 
-    // Ambil semua elemen dengan class 'fade-in' dan amati
     const elementsToFadeIn = document.querySelectorAll('.fade-in');
     elementsToFadeIn.forEach(el => observer.observe(el));
 });

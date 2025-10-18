@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // --- Efek Animasi Ketik ---
     const typingTextElement = document.getElementById('typing-text');
-    const wordsToType = ["Robotics Programmer", "Cloud Enthusiast", "Problem Solver"];
+    const wordsToType = ["Mechatronics Engineer", "AI/ML Developer", "Robotics Programmer"];
     let wordIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
